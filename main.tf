@@ -4,6 +4,11 @@ terraform {
       source  = "hashicorp/aws"
     }
   }
+  backend "s3" {
+    bucket       = "terraform-state-708626570948"
+    key          = "terraform.tfstate"
+    use_lockfile = true
+  }
 }
 
 provider "aws" {
